@@ -22,7 +22,7 @@ def format_num(num):
 	return num
 
 def parse_string(input_raw):
-	print("parsing string")
+	#print("parsing string")
 
 	input_raw = input_raw.replace(' ','')
 	dict_chars = {}
@@ -39,7 +39,7 @@ def parse_string(input_raw):
 		print(str(key) + ": " + str(dict_chars[key]))
 
 def parse_num_seq(user_input):
-	print("parsing num sequence")
+	#print("parsing num sequence")
 	
 	summation = 0
 	dict_nums = {}
@@ -51,13 +51,13 @@ def parse_num_seq(user_input):
 
 	try:
 		user_input = list(map(int, user_input))
-		print("to ints: " + str(user_input))
+		#print("to ints: " + str(user_input))
 	except ValueError:
 		print("Looks like you have an element in your sequence that is not a number. Please try again")
 		return
 
 	user_input.sort()
-	print("sorted: " + str(user_input))
+	#print("sorted: " + str(user_input))
 
 	for element in user_input:
 		summation = summation + element
@@ -67,7 +67,7 @@ def parse_num_seq(user_input):
 			if dict_nums[element] > mode_count:
 				mode_count = dict_nums[element]
 				mode_val = element
-				print("mode val: " + str(mode_val) + "  |  mode count: " + str(mode_count))
+				#print("mode val: " + str(mode_val) + "  |  mode count: " + str(mode_count))
 		else:
 			dict_nums[element] = 1
 
@@ -93,10 +93,10 @@ def parse_input(user_input):
 
 		input_raw = user_input
 		user_input = user_input.split()
-		print("split: " + str(user_input))
+		#print("split: " + str(user_input))
 
 		digit = is_digit(user_input[0])
-		print("element: " + str(user_input[0]))
+		#print("element: " + str(user_input[0]))
 
 		if digit:
 			parse_num_seq(user_input)
@@ -109,7 +109,7 @@ def main():
 	 user_input = raw_input("Please enter a numerical sequence or a literal string: ").replace('"','').strip()
 
 	 while user_input != 'quit':
-	 	print(str(user_input))
+	 	#print(str(user_input))
 	 	parse_input(user_input)
 		user_input = raw_input("Please enter a numerical sequence or a literal string: ").replace('"','').strip()
 
